@@ -31,7 +31,7 @@ visib.textContent = "Loading...";
 const location_name = urlParams.get("location");
 console.log(location_name);
 
-const url = "http://localhost:3000/weather?address=" + location_name;
+const url = "/weather?address=" + location_name;
 fetch(url).then((response) => {
   response.json().then((whole_data) => {
     if (whole_data.error) {
