@@ -28,8 +28,8 @@
   justify-content: center;
   margin-bottom: 20px;
   color: black;
-  font-family: "Raleway";
-  font-weight: 500;
+  /* font-family: "Raleway"; */
+  font-weight: 300;
 }
 
 .heading {
