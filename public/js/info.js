@@ -69,7 +69,6 @@ fetch(url).then((response) => {
       img.src = icon_url;
       icon.appendChild(img);
       img.style.borderRadius = "5px";
-
       if (isDay === "yes") {
         theme.href = "css/styleinfoday.css";
       } else {
