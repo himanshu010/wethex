@@ -35,6 +35,7 @@ const url = "/weather?address=" + location_name;
 fetch(url).then((response) => {
   response.json().then((whole_data) => {
     if (whole_data.error) {
+      location.replace("/error?error=" + whole_data.error);
       console.log(whole_data.error);
     } else {
       const {

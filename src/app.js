@@ -80,8 +80,13 @@ app.get("/weatherinfo", (req, res) => {
   });
 });
 
+app.get("/error", (req, res) => {
+  error = req.query.error;
+  res.render("error", { error });
+});
+
 app.get("*", (req, res) => {
-  res.send("My 404 page");
+  res.render("404");
 });
 
 app.listen(port, () => {
