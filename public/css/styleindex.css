@@ -49,7 +49,6 @@ body {
 body {
   background-image: url("bg1.jpg") !important;
   background-size: cover !important;
-  background-repeat: no-repeat;
 }
 .container .search {
   position: absolute;
