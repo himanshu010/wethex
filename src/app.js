@@ -32,26 +32,10 @@ app.get("", (req, res) => {
   });
 });
 
-app.get("/about", (req, res) => {
-  res.render("about", {
-    title: "about me",
-    about: "about123",
-    color: "red",
-  });
-});
-
-app.get("/help", (req, res) => {
-  res.render("help", {
-    help: "help12343",
-    title: "help",
-    name: "himanshu",
-  });
-});
-
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
-      error: "you must provide a address",
+      error: "You must provide a location",
     });
   }
   geocode(
@@ -73,7 +57,7 @@ app.get("/weather", (req, res) => {
 
 app.get("/weatherinfo", (req, res) => {
   if (!req.query.location) {
-    return res.send("must provide an address");
+    return res.render("error", { error: "You must provide a location" });
   }
   res.render("weather-info", {
     location: req.query.location,
