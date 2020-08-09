@@ -26,44 +26,23 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
-  res.render("index", {
-    title: "weather app 1",
-    name: "himanshu aswal",
-  });
-});
-
-app.get("/about", (req, res) => {
-  res.render("about", {
-    title: "about me",
-    about: "about123",
-    color: "red",
-  });
-});
-
-app.get("/help", (req, res) => {
-  res.render("help", {
-    help: "help12343",
-    title: "help",
-    name: "himanshu",
-  });
+  res.render("index");
 });
 
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
-    return res.send({
-      error: "you must provide a address",
-    });
+    return res.render("error", { error: "You must provide a location" });
   }
   geocode(
     req.query.address,
     (error, { latitude, longitude, location } = {}) => {
       if (error) {
-        return res.send({ error });
+        return res.render("error", { error });
       }
 
       forecast(latitude, longitude, (error, data) => {
         if (error) {
-          return res.send({ error });
+          return res.render("error", { error });
         }
         res.send({ data, location });
       });
@@ -73,7 +52,7 @@ app.get("/weather", (req, res) => {
 
 app.get("/weatherinfo", (req, res) => {
   if (!req.query.location) {
-    return res.send("must provide an address");
+    res.render("error", { error: "You must provide a location" });
   }
   res.render("weather-info", {
     location: req.query.location,
