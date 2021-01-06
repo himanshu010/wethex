@@ -136,7 +136,7 @@ fetch(url).then((response) => {
         if (code == 305 || code == 308) {
           //heavy Rain sometime
           //Heavy rain
-          videoSrc.src = "assets/day/heavy-rain.mp4";
+          videoSrc.src = "assets/night/heavy-rain.mp4";
         }
 
         theme.href = "css/styleinfoday.css";
@@ -174,7 +174,7 @@ fetch(url).then((response) => {
         if (code == 179 || code == 182 || code == 227) {
           //Patchy snow
           //Patchy sleet
-          videoSrc.src = "assets/night/light-snow.mp4";
+          videoSrc.src = "assets/day/light-snow.mp4";
         }
         if (code == 200) {
           //thundery outbreak
