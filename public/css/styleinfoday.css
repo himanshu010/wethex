@@ -31,6 +31,8 @@ body {
   margin: 30px;
   margin-left: 50px;
   font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.96);
 }
 
 table {
@@ -84,4 +86,27 @@ section {
 }
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: -10;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #bgVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #bgVideo {
+    height: 100%;
+    width: auto;
+  }
 }

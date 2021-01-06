@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@600;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styleinfoday.css" id="theme" />
+    <link rel="stylesheet" href="css/styleinfo.css" id="theme" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{location}}</title>
@@ -13,6 +13,7 @@
 
 <body>
     <div class="outer-loc">
+        <video id="bgVideo" autoplay muted loop id="myVideo"></video>
         <div id="location"></div>
         <div id="wicon"></div>
     </div>
@@ -68,6 +69,9 @@
                 </table>
             </div>
         </div>
+    </div>
+    <div style="width: 100% !important;">
+        {{>footer}}
     </div>
 </body>
 <script src="js/info.js"></script>

@@ -27,6 +27,7 @@ const forecast = (latitude, longitude, callback) => {
       const uv_index = body.current.uv_index;
       const visibility = body.current.visibility;
       const isDay = body.current.is_day;
+      const code = body.current.weather_code;
       callback(undefined, {
         weatherDescription,
         temperature,
@@ -39,6 +40,7 @@ const forecast = (latitude, longitude, callback) => {
         uv_index,
         visibility,
         isDay,
+        code,
       });
     }
   });
