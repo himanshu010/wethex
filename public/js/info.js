@@ -73,23 +73,19 @@ fetch(url).then((response) => {
 
       var videoSrc = document.createElement("source");
       videoSrc.type = "video/mp4";
-      isDay = "yes";
       if (isDay === "yes") {
-        if (code == 113) {
+        if (code == 113 && feelslike >= 10) {
           //Sunny
           videoSrc.src = "assets/day/sunny.mp4";
-        }
-        if (code == 116 || code == 119 || code == 122) {
+        } else if (code == 116 || code == 119 || code == 122) {
           //Partly Cloudy
           //Cloudy
           //Overcast
           videoSrc.src = "assets/day/cloudy.mp4";
-        }
-        if (code == 143) {
+        } else if (code == 143) {
           //Mist
           videoSrc.src = "assets/day/mist.mp4";
-        }
-        if (
+        } else if (
           code == 176 ||
           code == 293 ||
           code == 296 ||
@@ -104,58 +100,48 @@ fetch(url).then((response) => {
           //moderate rain
           //light freezing rain
           videoSrc.src = "assets/day/drizzle.mp4";
-        }
-        if (code == 179 || code == 182 || code == 227) {
+        } else if (code == 179 || code == 182 || code == 227) {
           //Patchy snow
           //Patchy sleet
           videoSrc.src = "assets/day/light-snow.mp4";
-        }
-        if (code == 200) {
+        } else if (code == 200) {
           //thundery outbreak
           videoSrc.src = "assets/day/thunderstorm.mp4";
-        }
-        if (code == 230) {
-          //Blizzard
-          videoSrc.src = "assets/day/light-snow.mp4";
-        }
-        if (code == 248 || code == 260) {
+        } else if (code == 248 || code == 260) {
           //Fog
           videoSrc.src = "assets/day/fog.mp4";
-        }
-        if (code == 185 || code == 263 || code == 266) {
+        } else if (code == 185 || code == 263 || code == 266) {
           //Patchy drizzle
           //patchy light drizzle
           //light drizzle
           videoSrc.src = "assets/day/light-drizzle.mp4";
-        }
-        if (code == 281 || code == 284) {
+        } else if (code == 281 || code == 284) {
           //Freezing drizzle
           //Heavy Freezing Drizzle
           videoSrc.src = "assets/day/light-drizzle.mp4";
-        }
-        if (code == 305 || code == 308) {
+        } else if (code == 305 || code == 308) {
           //heavy Rain sometime
           //Heavy rain
           videoSrc.src = "assets/night/heavy-rain.mp4";
+        } else if (code == 230 || feelslike < 10) {
+          //Blizzard
+          videoSrc.src = "assets/day/light-snow.mp4";
         }
 
         theme.href = "css/styleinfoday.css";
       } else {
-        if (code == 113) {
+        if (code == 113 && feelslike >= 10) {
           //clear
           videoSrc.src = "assets/night/clear.mp4";
-        }
-        if (code == 116 || code == 119 || code == 122) {
+        } else if (code == 116 || code == 119 || code == 122) {
           //Partly Cloudy
           //Cloudy
           //Overcast
           videoSrc.src = "assets/night/cloudy.mp4";
-        }
-        if (code == 143) {
+        } else if (code == 143) {
           //Mist
           videoSrc.src = "assets/night/fog.mp4";
-        }
-        if (
+        } else if (
           code == 176 ||
           code == 293 ||
           code == 296 ||
@@ -170,39 +156,32 @@ fetch(url).then((response) => {
           //moderate rain
           //light freezing rain
           videoSrc.src = "assets/night/drizzle.mp4";
-        }
-        if (code == 179 || code == 182 || code == 227) {
+        } else if (code == 179 || code == 182 || code == 227) {
           //Patchy snow
           //Patchy sleet
           videoSrc.src = "assets/day/light-snow.mp4";
-        }
-        if (code == 200) {
+        } else if (code == 200) {
           //thundery outbreak
           videoSrc.src = "assets/night/thunderstorm.mp4";
-        }
-        if (code == 230) {
-          //Blizzard
-          videoSrc.src = "assets/night/light-snow.mp4";
-        }
-        if (code == 248 || code == 260) {
+        } else if (code == 248 || code == 260) {
           //Fog
           videoSrc.src = "assets/night/fog.mp4";
-        }
-        if (code == 185 || code == 263 || code == 266) {
+        } else if (code == 185 || code == 263 || code == 266) {
           //Patchy drizzle
           //patchy light drizzle
           //light drizzle
           videoSrc.src = "assets/night/light-drizzle.mp4";
-        }
-        if (code == 281 || code == 284) {
+        } else if (code == 281 || code == 284) {
           //Freezing drizzle
           //Heavy Freezing Drizzle
           videoSrc.src = "assets/night/light-drizzle.mp4";
-        }
-        if (code == 305 || code == 308) {
+        } else if (code == 305 || code == 308) {
           //heavy Rain sometime
           //Heavy rain
           videoSrc.src = "assets/night/heavy-rain.mp4";
+        } else if (code == 230 || feelslike < 10) {
+          //Blizzard
+          videoSrc.src = "assets/day/light-snow.mp4";
         }
 
         theme.href = "css/styleinfonight.css";
